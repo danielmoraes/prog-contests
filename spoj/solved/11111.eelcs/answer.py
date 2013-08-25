@@ -1,5 +1,5 @@
 # SPOJ 11111
-# Favorite Dice (EELCS)
+# Easy Longest Common Subsequence (EELCS)
 # Author: Daniel Moraes (daniel.b.moraes@gmail.com)
 
 s1, s2 = raw_input(), raw_input()

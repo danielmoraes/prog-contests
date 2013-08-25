@@ -1,5 +1,5 @@
 # SPOJ 11110
-# Favorite Dice (ELIS)
+# Easy Longest Increasing Subsequence (ELIS)
 # Author: Daniel Moraes (daniel.b.moraes@gmail.com)
 
 n, s1 = int(raw_input()), map(int, raw_input().split())
