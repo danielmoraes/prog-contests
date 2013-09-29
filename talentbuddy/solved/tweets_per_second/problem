@@ -1,0 +1,21 @@
+Japan Castle in the Sky airing broke a Twitter record on August 3, 2013. At one
+point during the classic anime movie showing, people submitted 143,199 tweets
+per second. This particular spike was about 25 times greater than Twitter’s
+steady state.
+
+Given an array of integers representing the number of tweets recorded every
+second and an integer value K, your task is to write a function that prints to
+the standard output (stdout) the highest number of tweets recorded between each
+second in the array and the past K seconds before it.
+
+Note that your function will receive the following arguments:
+- tps: which is an array of integers representing the number of tweets recorded
+  every second
+- k: which is the integer number mentioned above
+
+Data constraints:
+- the length of the array above will not exceed 500,000 numbers
+
+Efficiency constraints
+- your function is expected to print the requested result and return in less
+  than 2 seconds
