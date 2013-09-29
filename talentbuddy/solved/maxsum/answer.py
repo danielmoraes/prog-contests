@@ -1,3 +1,7 @@
+# Talent Buddy
+# Max Sum
+# Author: Daniel Moraes (daniel.b.moraes@gmail.com)
+
 def find_max_sum(v):
     s1, s2 = 0, 0
     for i in xrange(len(v)):

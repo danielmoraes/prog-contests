@@ -1,3 +1,7 @@
+# Talent Buddy
+# Tweets per Second
+# Author: Daniel Moraes (daniel.b.moraes@gmail.com)
+
 def tweets_per_second(tps, k):
     l = len(tps)
     cm = tps[0]
