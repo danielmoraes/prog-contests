@@ -1,0 +1,12 @@
+Given an array A your tastk is to print in ascending order 4 distinct 0-based
+indexes of elements in the array that add up to a sum S, if such indexes exist.
+
+If there are multiple solutions please print the lowest one according to the
+lexicographical order.
+
+Example input:
+A = 3 2 1 4 5 7 6 9 7 8
+S = 30
+
+Example output:
+5 6 7 9
