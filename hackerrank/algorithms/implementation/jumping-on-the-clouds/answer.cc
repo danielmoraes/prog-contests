@@ -40,6 +40,6 @@ int main(){
         }
         jumps++;
     }
-    cout << jumps;
+    cout << jumps << endl;
     return 0;
 }

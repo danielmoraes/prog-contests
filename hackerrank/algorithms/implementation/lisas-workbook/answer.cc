@@ -21,6 +21,6 @@ int main() {
             current_page++;
         }
     }
-    cout << specials;
+    cout << specials << endl;
     return 0;
 }

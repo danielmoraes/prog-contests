@@ -42,6 +42,6 @@ int main(){
            pairs += b[i] * b[m];
        }
     }
-    cout << pairs;
+    cout << pairs << endl;
     return 0;
 }

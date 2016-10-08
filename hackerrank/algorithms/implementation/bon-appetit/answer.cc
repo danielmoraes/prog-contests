@@ -17,9 +17,9 @@ int main() {
     cin >> charged;
     int diff = charged - (actual / 2);
     if (diff <= 0) {
-        cout << "Bon Appetit";
+        cout << "Bon Appetit" << endl;
     } else {
-        cout << diff;
+        cout << diff << endl;
     }
     return 0;
 }
