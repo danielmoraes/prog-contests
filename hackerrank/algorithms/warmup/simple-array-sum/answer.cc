@@ -13,6 +13,6 @@ int main(){
        cin >> el;
        sum += el;
     }
-    cout << sum;
+    cout << sum << endl;
     return 0;
 }

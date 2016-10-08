@@ -14,6 +14,6 @@ int main(){
        cin >> arr[arr_i];
         sum += arr[arr_i];
     }
-    cout << sum;
+    cout << sum << endl;
     return 0;
 }

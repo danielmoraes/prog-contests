@@ -23,6 +23,6 @@ int main() {
             count += max(b[i], b[m]);
         }
     }
-    cout << count;
+    cout << count << endl;
     return 0;
 }

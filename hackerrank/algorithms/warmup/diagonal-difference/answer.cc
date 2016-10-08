@@ -17,6 +17,6 @@ int main(){
           if (a_j == (n - 1 - a_i)) diag2_sum += a[a_i][a_j];
        }
     }
-    cout << abs(diag1_sum - diag2_sum);
+    cout << abs(diag1_sum - diag2_sum) << endl;
     return 0;
 }

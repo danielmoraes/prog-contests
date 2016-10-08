@@ -34,6 +34,6 @@ int main(){
             energy -= 2;
         }
     }
-    cout << energy;
+    cout << energy << endl;
     return 0;
 }

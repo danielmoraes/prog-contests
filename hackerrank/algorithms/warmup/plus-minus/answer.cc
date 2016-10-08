@@ -3,6 +3,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <iomanip>
 using namespace std;
 
 int main(){
@@ -16,6 +17,9 @@ int main(){
         else if (arr[arr_i] < 0) neg++;
         else zero++;
     }
-    cout << pos / double(n) << endl << neg / double(n) << endl << zero / double(n);
+    std::cout << std::fixed << std::setprecision(6);
+    cout << pos / double(n) << endl;
+    cout << neg / double(n) << endl;
+    cout << zero / double(n) << endl;
     return 0;
 }

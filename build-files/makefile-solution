@@ -1,0 +1,15 @@
+SRC = answer.cc
+OBJ = answer.o
+CC = g++
+FLAGS = -O2 -fomit-frame-pointer
+
+all: clean build test
+
+clean:
+	@rm -f *.o
+
+build: $(SRC)
+	@$(CC) $(FLAGS) -o $(OBJ) $(SRC)
+
+test:
+	@make -C tests --no-print-directory

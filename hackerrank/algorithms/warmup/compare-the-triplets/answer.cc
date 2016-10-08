@@ -39,6 +39,6 @@ int main(){
     else if (b1 > a1) bob_score++;
     if (a2 > b2) alice_score++;
     else if (b2 > a2) bob_score++;
-    cout << alice_score << " " << bob_score;
+    cout << alice_score << " " << bob_score << endl;
     return 0;
 }

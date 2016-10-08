@@ -1,0 +1,17 @@
+SHELL=/bin/bash
+
+TESTS=$(addsuffix .test, $(basename $(wildcard *.in)))
+
+.PHONY=test all %.test
+
+BIN=../answer.o
+
+test: $(TESTS)
+
+%.test: %.in %.out $(BIN)
+	@$(BIN) <$< 2>&1 | diff -q $(word 2, $?) - >/dev/null || \
+	(echo "Test $@ failed" && exit 1)
+
+all: test
+	@echo $(TESTS)
+	@echo "Success, all tests passed."

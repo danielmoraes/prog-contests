@@ -27,6 +27,6 @@ int main(){
     long t;
     cin >> t;
     long x = 3 * pow(2, floor(log2((t + 2) / 3)));
-    cout << x - ((t + 2) % x);
+    cout << x - ((t + 2) % x) << endl;
     return 0;
 }

@@ -39,6 +39,6 @@ int main(){
             }
         }
     }
-    cout << count * (n / s.length()) + tmp;
+    cout << count * (n / s.length()) + tmp << endl;
     return 0;
 }
