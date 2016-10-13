@@ -97,7 +97,6 @@ int main() {
     }
 
     int convergence_time = 3 + 2 * (history_count - 2);
-    // cout << convergence_time << ":" << n << endl;
     if ((n - convergence_time) % 4 == 0) {
       print_grid(history[(history_count - 1) % 2], r, c);
     } else {
