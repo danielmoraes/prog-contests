@@ -1,15 +1,7 @@
-/*
- *
- * EPI
- * Computing the Parity of a Word (5.1)
- *
- */
+#ifndef EPI_PARITY_H_
+#define EPI_PARITY_H_
 
-#include <math.h>
-#include <ctime>
-#include <iostream>
-
-using namespace std;
+// @include
 
 // O(n), where n is the number of bits
 short parity_a(unsigned long word) {
@@ -40,29 +32,6 @@ short parity_c(unsigned long word, short bsize, unsigned short mask,
            cache[word >> (3 * bsize)];
 }
 
-int main() {
-  unsigned long min = pow(2, 63) + 1;
-  unsigned long max = min + pow(2, 20);
+// @exclude
 
-  clock_t begin;
-
-  begin = clock();
-  for (unsigned long i = min; i <= max; i++) {
-    parity_a(i);
-  }
-  cout << clock() - begin << endl;
-
-  begin = clock();
-  for (unsigned long i = min; i <= max; i++) {
-    parity_b(i);
-  }
-  cout << clock() - begin << endl;
-
-  begin = clock();
-  short cache[65536];
-  for (int i = 0; i < 65536; i++) cache[i] = parity_b(i);
-  for (unsigned long i = min; i <= max; i++) {
-    parity_c(i, 16, 0xFFFF, cache);
-  }
-  cout << clock() - begin << endl;
-}
+#endif  // EPI_PARITY_H_
