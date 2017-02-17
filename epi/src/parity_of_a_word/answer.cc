@@ -7,8 +7,7 @@
 
 #include <ctime>
 #include <iostream>
-#include <random64.h>
-#include <parity.h>
+#include <primitive_types.h>
 
 using namespace std;
 

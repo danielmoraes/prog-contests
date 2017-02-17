@@ -7,8 +7,7 @@
 
 #include <bitset>
 #include <iostream>
-#include <random64.h>
-#include <reverse_bits.h>
+#include <primitive_types.h>
 
 using namespace std;
 

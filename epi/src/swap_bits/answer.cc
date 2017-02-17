@@ -8,8 +8,7 @@
 #include <math.h>
 #include <bitset>
 #include <iostream>
-#include <random64.h>
-#include <swap_bits.h>
+#include <primitive_types.h>
 
 using namespace std;
 
