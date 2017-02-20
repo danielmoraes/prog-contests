@@ -3,6 +3,8 @@
 
 // @include
 
+typedef unsigned long long ULONG;
+
 /*
  * Random 64bit numbers
  */
@@ -16,8 +18,8 @@ unsigned rand256() {
     return result % 256;
 }
 
-unsigned long long rand64bits() {
-    unsigned long long results = 0ULL;
+ULONG rand64bits() {
+    ULONG results = 0ULL;
     for ( int count = 8; count > 0; -- count ) {
         results = 256U * results + rand256();
     }
@@ -29,7 +31,7 @@ unsigned long long rand64bits() {
  */
 
 // O(n), where n is the number of bits
-short parity_a(unsigned long word) {
+short parity_a(ULONG word) {
   short result = 0;
   while (word) {
     result ^= (word & 1);
@@ -39,7 +41,7 @@ short parity_a(unsigned long word) {
 }
 
 // O(k), where k is then number of bits sets to 1
-short parity_b(unsigned long word) {
+short parity_b(ULONG word) {
   short result = 0;
   while (word) {
     result ^= 1;
@@ -49,44 +51,53 @@ short parity_b(unsigned long word) {
 }
 
 // O(n/l), where n is the number of bits and l the block size
-short parity_c(unsigned long word, short bsize, unsigned short mask,
-               short cache[]) {
+short parity_c(ULONG word, short bsize, unsigned short mask, short cache[]) {
     return cache[word & mask] ^
            cache[(word >> bsize) & mask] ^
            cache[(word >> (2 * bsize)) & mask] ^
            cache[word >> (3 * bsize)];
 }
 
-unsigned long long swap_bits(unsigned long long word, int i, int j) {
+ULONG swap_bits(ULONG word, int i, int j) {
   if ( ( ( word >> i ) & 1 ) ^ ( ( word >> j ) & 1) ) {  // if bits differ
     word ^= (1L << i) | (1L << j);
   }
   return word;
 }
 
-unsigned long long reverse_bits(unsigned long long word, int n) {
+ULONG reverse_bits(ULONG word, int n) {
   for ( int i = 0, j = n; i < j; i++, j-- ) {
     word = swap_bits(word, j, 63 - j);
   }
   return word;
 }
 
-unsigned long long reverse_bits_cache(unsigned long long word, int n,
-                                      short bsize, short cache[]) {
+ULONG reverse_bits_cache(ULONG word, int n, short bsize, short cache[]) {
   for ( int i = 0, j = n; i < j; i++, j-- ) {
     word = swap_bits(word, j, 63 - j);
   }
   return word;
 }
 
-unsigned long long closest_integer_same_weight(
-    unsigned long long word, int bitsize) {
+ULONG closest_integer_same_weight(ULONG word, int bitsize) {
   for (int i = 0; i < bitsize - 1; i++) {
     if ( ( ( word >> i ) & 1 ) ^ ( ( word >> i + 1 ) & 1) ) {  // if bits differ
       word = swap_bits(word, i, i + 1);
       return word;
     }
   }
+}
+
+/*
+ * Operations on decimal numbers
+ */
+
+long reverse_digits(int x) {
+  long x_reversed = 0;
+  short x_sign = (x < 0) ? -1 : 1;
+  for (; x > 0; x /= 10)
+    x_reversed = (x_reversed * 10) + (x % 10);
+  return x_reversed * x_sign;
 }
 
 // @exclude

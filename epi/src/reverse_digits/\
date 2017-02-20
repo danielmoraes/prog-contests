@@ -1,0 +1,19 @@
+/*
+ *
+ * EPI
+ * Reverse Digits (5.8)
+ *
+ */
+
+#include <bitset>
+#include <iostream>
+#include <primitive_types.h>
+
+using namespace std;
+
+int main() {
+  for ( int i = 0; i < 10; i++ ) {
+    int word = rand() % 1000 + 1;
+    cout << word << ":" << reverse_digits(word) << endl;
+  }
+}
