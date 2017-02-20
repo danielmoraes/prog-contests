@@ -3,6 +3,8 @@
 
 // @include
 
+#include <math.h>
+
 typedef unsigned long long ULONG;
 
 /*
@@ -95,9 +97,24 @@ ULONG closest_integer_same_weight(ULONG word, int bitsize) {
 long reverse_digits(int x) {
   long x_reversed = 0;
   short x_sign = (x < 0) ? -1 : 1;
-  for (; x > 0; x /= 10)
-    x_reversed = (x_reversed * 10) + (x % 10);
+  for ( ; x > 0; x /= 10 )
+    x_reversed = ( x_reversed * 10 ) + ( x % 10 );
   return x_reversed * x_sign;
+}
+
+bool is_palindrome(int x) {
+  if (x < 0) {
+    return false;
+  }
+  for (int nd = log10(x) + 1; nd > 1; nd -= 2) {
+    int msd_mask = pow(10, nd - 1);
+    if ( ( x / msd_mask ) != ( x % 10 ) ) {
+      return false;
+    }
+    x -= msd_mask;
+    x /= 10;
+  }
+  return true;
 }
 
 // @exclude
