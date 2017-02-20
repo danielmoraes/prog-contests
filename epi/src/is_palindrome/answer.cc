@@ -5,7 +5,6 @@
  *
  */
 
-#include <bitset>
 #include <iostream>
 #include <primitive_types.h>
 

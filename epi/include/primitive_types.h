@@ -8,8 +8,20 @@
 typedef unsigned long long ULONG;
 
 /*
- * Random 64bit numbers
+ * Random
  */
+
+int uniform_random(int lbound, int ubound) {
+  int random = 0;
+  int range = ubound - lbound + 1;
+  int range_bits = ceil(log2(range));
+  do {
+    for (int i = 0; i < range_bits; i++) {
+      random += ( rand() % 2 ) * pow(2, i);
+    }
+  } while ( random >= range );  // repeat until sorts a number within the range
+  return random + lbound;
+}
 
 unsigned rand256() {
     static unsigned const limit = RAND_MAX - RAND_MAX % 256;
