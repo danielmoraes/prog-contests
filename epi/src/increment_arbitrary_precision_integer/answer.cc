@@ -7,18 +7,9 @@
 
 #include <iostream>
 #include <vector>
+#include <utils.h>
 
 using namespace std;
-
-void print_vector(const vector<int>& v) {
-  for (int i = 0; i < v.size(); i++) {
-    if (i > 0) {
-      cout << " ";
-    }
-    cout << v[i];
-  }
-  cout << endl;
-}
 
 void increment(vector<int>& v) {
   v.back()++;

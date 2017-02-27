@@ -7,18 +7,11 @@
 
 #include <vector>
 #include <math.h>
+#include <utils.h>
 #include <iostream>
 #include <algorithm>
 
 using namespace std;
-
-void print_vector(const vector<int>& v) {
-  for (int i = 0; i < v.size(); i++) {
-    if (i > 0) cout << " ";
-    cout << v[i];
-  }
-  cout << endl;
-}
 
 void remove_leading_zeros(vector<int>& v) {
   int pos = v.size() - 1, leading_zeros = 0;

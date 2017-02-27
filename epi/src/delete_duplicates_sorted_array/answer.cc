@@ -7,17 +7,10 @@
 
 #include <vector>
 #include <math.h>
+#include <utils.h>
 #include <iostream>
 
 using namespace std;
-
-void print_vector(const vector<int>& v) {
-  for (int i = 0; i < v.size(); i++) {
-    if (i > 0) cout << " ";
-    cout << v[i];
-  }
-  cout << endl;
-}
 
 int delete_duplicates(vector<int>& vec) {
   int last_empty_index = 1;

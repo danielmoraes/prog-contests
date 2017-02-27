@@ -6,19 +6,12 @@
  */
 
 #include <math.h>
+#include <utils.h>
 #include <vector>
 #include <cassert>
 #include <iostream>
 
 using namespace std;
-
-void print_vector(const vector<int>& v) {
-  for (int i = 0; i < v.size(); i++) {
-    if (i > 0) cout << " ";
-    cout << v[i];
-  }
-  cout << endl;
-}
 
 // x is prime if it is not multiple of any prime
 // compare x to previous computed primes

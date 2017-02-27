@@ -7,19 +7,10 @@
 
 #include <iostream>
 #include <algorithm>
+#include <utils.h>
 #include <math.h>
 
 using namespace std;
-
-void print_array(int arr[], int size) {
-  for (int i = 0; i < size; i++) {
-    if (i > 0) {
-      cout << " ";
-    }
-    cout << arr[i];
-  }
-  cout << endl;
-}
 
 int partition_dutch_flag(int arr[], int size, int pivot) {
   int l = -1, e = -1, h = -1;
