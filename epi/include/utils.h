@@ -18,7 +18,8 @@ void print_array(int arr[], int size) {
   std::cout << std::endl;
 }
 
-void print_vector(const std::vector<int>& v) {
+template<typename T>
+void print_vector(const std::vector<T>& v) {
   for (int i = 0; i < v.size(); i++) {
     if (i > 0) std::cout << " ";
     std::cout << v[i];
