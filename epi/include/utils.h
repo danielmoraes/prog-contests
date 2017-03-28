@@ -4,6 +4,10 @@
 #include <vector>
 #include <iostream>
 
+using std::cout;
+using std::endl;
+using std::vector;
+
 // @include
 
 /*
@@ -12,30 +16,39 @@
 
 void print_array(int arr[], unsigned int size) {
   for (unsigned int i = 0; i < size; i++) {
-    if (i > 0) std::cout << " ";
-    std::cout << arr[i];
+    if (i > 0) cout << " ";
+    cout << arr[i];
   }
-  std::cout << std::endl;
+  cout << endl;
 }
 
 template<typename T>
-void print_vector(const std::vector<T>& v) {
+void print_vector(const vector<T>& v) {
   for (unsigned int i = 0; i < v.size(); i++) {
-    if (i > 0) std::cout << " ";
-    std::cout << v[i];
+    if (i > 0) cout << " ";
+    cout << v[i];
   }
-  std::cout << std::endl;
+  cout << endl;
 }
 
 template<typename T>
-void print_matrix(const std::vector<std::vector<T>>& v) {
+void print_matrix(const vector<vector<T>>& v) {
   for (unsigned int i = 0; i < v.size(); i++) {
     for (unsigned int j = 0; j < v[i].size(); j++) {
-      if (j > 0) std::cout << "\t";
-      std::cout << v[i][j];
+      if (j > 0) cout << "\t";
+      cout << v[i][j];
     }
-    std::cout << std::endl;
+    cout << endl;
   }
+}
+
+template<typename T>
+void print_list(shared_ptr<ListNode<T>> L) {
+  while (L) {
+    cout << L->data << " ";
+    L = L->next;
+  }
+  cout << endl;
 }
 
 // @exclude
