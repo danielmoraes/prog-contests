@@ -1,7 +1,7 @@
 /*
  *
  * EPI
- * Merge Two Sorted Lists (8.2)
+ * Merge Two Sorted Lists (8.1)
  *
  */
 

@@ -12,7 +12,7 @@
 using namespace std;
 
 // @include
-string base_convertion(string s, int b1, int b2) {
+string base_convertion(const string& s, int b1, int b2) {
   bool is_negative = s.front() == '-';
 
   int decimal = 0;
