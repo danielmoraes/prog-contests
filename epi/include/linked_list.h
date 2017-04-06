@@ -1,5 +1,5 @@
-#ifndef EPI_LINKED_LISTS_H_
-#define EPI_LINKED_LISTS_H_
+#ifndef EPI_LINKED_LIST_H_
+#define EPI_LINKED_LIST_H_
 
 #include <memory>
 
@@ -40,4 +40,4 @@ bool delete_after(const shared_ptr<ListNode<int>>& node) {
 
 // @exclude
 
-#endif  // EPI_LINKED_LISTS_H_
+#endif  // EPI_LINKED_LIST_H_

@@ -6,12 +6,15 @@
  */
 
 #include <iostream>
-#include <linked_lists.h>
+#include <linked_list.h>
+#include <memory>
 #include <utils.h>
 
-using std::string;
 using std::cout;
 using std::endl;
+using std::make_shared;
+using std::shared_ptr;
+using std::string;
 
 // @include
 shared_ptr<ListNode<int>> merge_sorted_lists(shared_ptr<ListNode<int>> L1,
