@@ -10,3 +10,9 @@ clean:
 
 build: $(SRC)
 	@$(CC) $(FLAGS) -o $(OBJ) $(SRC)
+
+small:
+	@./$(OBJ) < tests/small.in > tests/small.out
+
+large:
+	@./$(OBJ) < tests/large.in > tests/large.out

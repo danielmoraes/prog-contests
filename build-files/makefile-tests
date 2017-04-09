@@ -12,6 +12,9 @@ test: $(TESTS)
 	@$(BIN) <$< 2>&1 | diff -q $(word 2, $?) - >/dev/null || \
 	(echo "Test $@ failed" && exit 1)
 
+clean:
+	rm -f *.out *.in
+
 all: test
 	@echo $(TESTS)
 	@echo "Success, all tests passed."
