@@ -1,12 +1,15 @@
 #ifndef EPI_UTILS_H_
 #define EPI_UTILS_H_
 
+#include <memory>
 #include <vector>
 #include <iostream>
+#include <linked_list.h>
 
 using std::cout;
 using std::endl;
 using std::vector;
+using std::shared_ptr;
 
 // @include
 
