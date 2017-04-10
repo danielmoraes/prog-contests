@@ -14,7 +14,7 @@ Interviews, Second Edition.
 ## Sorting and Data Structures
 
 6. Binary Trees — 1/17
-7. Heaps
+7. Heaps — 1/7
 8. Searching
 9. Hash Tables
 10. Sorting
