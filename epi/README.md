@@ -17,7 +17,7 @@ Interviews, Second Edition.
 7. Heaps — 1/7
 8. Searching — 1/10
 9. Hash Tables — 1/14
-10. Sorting
+10. Sorting — 1/10
 11. Binary Search Trees
 
 ## Advanced Topics
