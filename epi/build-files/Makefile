@@ -1,7 +1,7 @@
 SRC = answer.cc
 OBJ = answer.o
 CC = g++
-FLAGS = -I../../include/ -O2 -fomit-frame-pointer -g -Wall
+FLAGS = -I../../include/ -O2 -fomit-frame-pointer -g -Wall -std=c++11
 
 all: clean build
 

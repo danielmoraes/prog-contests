@@ -16,7 +16,7 @@ Interviews, Second Edition.
 6. Binary Trees — 1/17
 7. Heaps — 1/7
 8. Searching — 1/10
-9. Hash Tables
+9. Hash Tables — 1/14
 10. Sorting
 11. Binary Search Trees
 
