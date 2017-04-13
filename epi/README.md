@@ -18,7 +18,7 @@ Interviews, Second Edition.
 8. Searching — 1/10
 9. Hash Tables — 1/14
 10. Sorting — 1/10
-11. Binary Search Trees
+11. Binary Search Trees — 1/13
 
 ## Advanced Topics
 
