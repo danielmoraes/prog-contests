@@ -22,7 +22,7 @@ Interviews, Second Edition.
 
 ## Advanced Topics
 
-12. Recursion
+12. Recursion — 1/11
 13. Dinamic Programming
 14. Greedy Algorithms and Invariants
 15. Graphs
