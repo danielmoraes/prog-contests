@@ -1,79 +1,98 @@
 /*
  *
  * CodeJam 2017 - Round 1A
- * Problem 3
+ * Problem 2
  *
  */
 
-#include <bits/stdc++.h>
+#include <algorithm>
+#include <iostream>
+#include <vector>
 
 using namespace std;
+
+struct Range {
+  bool operator<(const Range& that) const {
+    if (l == that.l) {
+      return u < that.u;
+    } else {
+      return l < that.l;
+    }
+  }
+  int l, u;
+  bool used = false;
+};
+
+int solve_greedy() {
+  int n, p;
+  cin >> n >> p;
+
+  vector<int> ingredients(n);
+  for (int i = 0; i < n; ++i) {
+    cin >> ingredients[i];
+  }
+
+  vector<vector<Range>> ranges(n);
+  for (int i = 0; i < n; ++i) {
+    int r = ingredients[i];
+    for (int j = 0; j < p; ++j) {
+      int q;
+      cin >> q;
+
+      int dd = 10 * q, ds;  // dividend and divisor
+
+      ds = 11 * r;
+      int l = (dd + ds - 1) / ds;  // integer ceiling
+      ds = 9 * r;
+      int u = dd / ds;  // integer floor
+
+      if (l <= u) {
+        ranges[i].push_back({l, u});
+      }
+    }
+    sort(ranges[i].begin(), ranges[i].end());
+  }
+
+  int result = 0;
+
+  for (int i = 0; i < ranges[0].size(); ++i) {
+    vector<int> kit(n, -1);
+
+    kit[0] = i;
+
+    bool valid_kit = false;;
+    for (int m = ranges[0][i].l; m <= ranges[0][i].u && !valid_kit; ++m) {
+      valid_kit = true;
+      for (int j = 1; j < ranges.size() && valid_kit; ++j) {
+        for (int k = 0; k < ranges[j].size() && ranges[j][k].l <= m; ++k) {
+          if (ranges[j][k].u < m || ranges[j][k].used) continue;
+          if (kit[j] == -1 || ranges[j][k].u < ranges[j][kit[j]].u) {
+            kit[j] = k;
+          }
+        }
+        if (kit[j] == -1) {
+          valid_kit = false;
+        }
+      }
+    }
+
+    if (valid_kit) {
+      result++;
+      for (int j = 0; j < ranges.size(); ++j) {
+        ranges[j][kit[j]].used = true;
+      }
+    }
+  }
+
+  return result;
+}
 
 int main() {
   int t;
   cin >> t;
 
   for (int i = 1; i <= t; ++i) {
-    printf("Case #%d:\n", i);
-
-    int hd, ad, hk, ak, b, d;
-    cin >> hd >> ad >> hk >> ak >> b >> d;
-
-    int c_hd = hd, c_hk = hk;
-
-    int rounds = 0;
-    while (c_hk > 0) {
-      cout << c_hk << " " << c_hd << endl;
-      if (c_hd <= 0) break;
-
-      int rounds_to_lose = ceil(c_hd / (double) ak);
-      int rounds_to_lose_d = ceil(c_hd / (double) max(ak - d, 0) - 1);
-      int rounds_to_lose_h = ceil(hd / (double) ak);
-      int rounds_to_win = ceil(c_hk / (double) ad);
-      int rounds_to_win_b = ceil(c_hk / (double) (ad + b)) + 1;
-
-      cout << rounds_to_lose << endl;
-      cout << rounds_to_lose_d << endl;
-      cout << rounds_to_lose_h << endl;
-      cout << rounds_to_win << endl;
-      cout << rounds_to_win_b << endl;
-
-      if (rounds_to_lose < rounds_to_win) {
-        exit(0);
-        if (rounds_to_lose_d >= rounds_to_lose_h) {
-          cout << "D" << endl;
-          rounds_to_lose = rounds_to_lose_d;
-          ak = max(ak - d, 0);
-          rounds++;
-          continue;
-        } else {
-          cout << "HEAL" << endl;
-          rounds_to_lose = rounds_to_lose_h;
-          c_hd = hd;
-          rounds++;
-          continue;
-        }
-      }
-
-      if (rounds_to_win_b < rounds_to_win) {
-        cout << "B" << endl;
-        ad += b;
-        rounds++;
-        continue;
-      }
-
-      cout << "ATTACK" << endl;
-
-      c_hk -= ad;
-      c_hd -= ak;
-      rounds++;
-    }
-
-    if (c_hk <= 0) {
-      cout << rounds << endl;
-    } else {
-      cout << "IMPOSSIBLE" << endl;
-    }
+    printf("Case #%d: %d\n", i, solve_greedy());
   }
 
   return 0;
