@@ -25,7 +25,7 @@ Interviews, Second Edition.
 12. Recursion — 1/11
 13. Dinamic Programming — 1/12
 14. Greedy Algorithms and Invariants — 2/8
-15. Graphs
+15. Graphs — 1/9
 16. Parallel Computing
 
 ## Domaing Specific
