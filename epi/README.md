@@ -28,7 +28,7 @@ Interviews, Second Edition.
 15. Graphs — 1/9
 16. Parallel Computing
 
-## Domaing Specific
+## Domain Specific
 
 17. Design Problems
 18. Language Questions
